@@ -16,9 +16,8 @@ Pet pet = new pet();
 > Pet my_dog = new Dog();
 > ```
 >
->
 
-
+- Use this when you want the Class cannot be initialized, so like if you have a class name `Animal`. You don't want the user to create `new Animal`. You want to specify it to either `new Dog` or `new Cat`
 
 ## Abstract method
 
@@ -45,11 +44,11 @@ public class Cat extends Pet {
 }
 ```
 
-IF you extends from an abstract class, you need to include its ==abstract method== if any.
+IF you (are not abstract class) and extends from an abstract class, you need to include its ==abstract method== if any.
 
 And `Cat` also have ==name and age== as inheritance.
 
-
+* Abstract class doesn't necessarily need to include its parent's abstract methods. 
 
 ## Interface
 

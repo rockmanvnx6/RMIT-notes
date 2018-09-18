@@ -33,7 +33,7 @@ class Animal {
     }
 }
 
-class Dog {
+class Dog extends Animal{
     private String sound = "Bark";
     public Dog(String spiecies, int average_ages) {
         super(spiecies,average_ages);

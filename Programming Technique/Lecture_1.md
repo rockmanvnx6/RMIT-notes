@@ -92,7 +92,7 @@ public class Program_name {
 
 ## Data type
 
-`byte` `short` `init` `long` `float`  `double` `char` `boolean`
+`byte` `short` `int` `long` `float`  `double` `char` `boolean`
 
 **char** : ``
 

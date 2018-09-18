@@ -76,7 +76,7 @@ use `StringBuffer` then `setCharAt`
 
 `StringBuffer string = new StringBuffer("something")`
 
-`string.setCharA(2,'a')`
+`string.setCharAt(2,'a')`
 
 > soaething
 
@@ -105,7 +105,7 @@ System.out.println(name.toUpperCase());
 > THANG
 
 
-## replace(char old, char new)
+## replace(String s1, String s2)
 
 > This **only works with `String`, not `StringBuffer`**
 
@@ -131,6 +131,19 @@ System.out.println(name);
 
 Likewise, we have `replaceFirst()`
 
+
+
+> The difference between  replace and replaceAll is:
+>
+> `replaceAll` accepts regex for the first argument and replace do not. Thus, you can do:
+>
+> ```java
+> String a = "thang pham phAm thAng";
+> a.replaceAll("[Aa]","i")
+> ```
+>
+> > thing phim phim thing
+
 ## trim(string)
 
 remove space from both ends.
@@ -148,7 +161,7 @@ System.out.println(name);
 
 ## Split()
 
-`String arr[]=normalString.split(" ")`
+`String arr[]=normalString.split("space")`
 
 returns an array with split string:
 
@@ -160,3 +173,13 @@ arr
 
 > [abcde,efg,hyz]
 
+
+
+* This only works like this, if you initial the array using split. won't work if you do like this:
+
+  ```java
+  ##### THIS WONT WORK #####
+  String arr[] = new String[5];
+  String a = "abcde efg hyz";
+  arr[] = a.split(" ");
+  ```
