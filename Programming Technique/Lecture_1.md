@@ -135,7 +135,7 @@ void doSomething(String withThis) {}
 **Constant are all upper case**
 
 ```java
-public static final String FIRSTNAME = "David"
+final String FIRSTNAME = "David"
 ```
 
 **Final: can't be change**
