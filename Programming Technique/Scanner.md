@@ -81,3 +81,41 @@ System.out.println("String Entered: s1 = " + s1 + "; s2 = " + s2);
 > String entered: s1 = thang; s2 = ngoc
 
 So whenever there is a space, s1 will take the word value before the space
+
+
+
+## Note
+
+`nextLine()` will take everything including space. It's suitable when you want to capture names, since names have space.
+
+Every `next()`, `nextLine()`,`nextInt()`,`nextDouble()`,`nextFloat()`,...
+
+will capture the `\n`. So there is no need to do `println`
+
+thus:
+
+```java
+Scanner input = new Scanner(System.in);
+System.out.print("Enter name: ");
+String name = input.nextLine();
+System.out.print("Enter age: ");
+int age = input.nextInt();
+System.out.print("Enter weight: ");
+double weight = input.nextDouble();
+
+System.out.printf("\nName: %s\nAge: %d\nWeight: %f",name,age,weight);
+```
+
+This will do the job.
+
+> Enter name: thang pham
+>
+> Enter age: 20
+>
+> Enter weight: 67.4
+
+Name: thang pham
+
+Age: 20
+
+Weight: 67.4
