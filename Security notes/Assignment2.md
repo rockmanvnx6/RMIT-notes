@@ -235,6 +235,7 @@ Because $m ==m'$ so Alice can verify that the sender is Bob
 
 
 
+## Q2.4
 
 
 
@@ -242,10 +243,60 @@ Because $m ==m'$ so Alice can verify that the sender is Bob
 
 
 
+## Q4.1
+
+**Trudy's attack hypothesis**
+
+![image-20180919201318370](image-20180919201318370.png)
+
+- Trudy will act as Alice, sends Bob `"I'm Alice", RA`
+- Bob sends back `RB, E(RA,KAB)`
+- Trudy opens a second connection, connect to Bob
 
 
 
+- Trudy sends Bob `"I'm Alice", RB`
+- Bob sends back ==RC,E(RB,KAB)==
+- Now trudy obtains `E(RB,KAB)`, he comes back the the first connection and then sends Bob `E(RB,KAB)`
+- Bob will think Trudy is Alice since only Alice has symmetric key K. And let Trudy in.
 
 
 
+**Prevention**
 
+Instead of doing `E(R,K)` it's better to do `E(person_name,R,K)`
+
+So it will be like
+
+- Alice sends Bob: `"I'm Alice", RA`
+- Bob sends Alice: `RB,E("Bob",RA,KAB)`
+- Alice sends Bob: `E("Alice",RB,KAB)`
+
+
+
+As a result, if Trudy is trying to trick Bob to send `E("Bob",RA,KAB)`, when Bob decrypts it, he sees his name. Thus he knows someone is trying to spoof Alice.
+
+
+
+## Q4.2
+
+![image-20180919205916206](image-20180919205916206.png)
+
+**Trudy's attack hypothesis**
+
+- First, Trudy can use Alice's public key to get `{T,K}Bob`
+- And then Trudy then sends Bob: `"I'm Trudy", [{T,K}Bob]Trudy`
+- Bob then sends trudy back `[{T+1,K}Trudy]Bob`
+- Thus, he can get the session key **K**.
+- However, this requires Trudy to act in the same clock skew.
+
+**Prevention**
+
+The whole point is to prevent Trudy from getting `{T,K}Bob`
+
+Thus, Alice has to :
+
+- Sends Bob `"I'm Alice", {[T,K]Alice}Bob`
+- And then Bob will send back: `{[T+1,K]Bob}Alice`
+
+Trudy will not be able to obtain `[T,K]Alice` since only Bob can sign to decrypt it.

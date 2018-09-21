@@ -65,7 +65,7 @@
 >
 > #### Visibility and visual feedback
 >
-> - Promince
+> - Prominence
 >   - Putting the more important items larger than the less important one. So users will focus on the important items first.
 > - Opacity
 >   - Chagne the opacity to bring items into focus
