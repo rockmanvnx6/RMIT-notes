@@ -217,7 +217,7 @@ Private key $d = e^{-1}mod(Ф)= 281042955478893466383058498686144451327387518013
 Bob then signs his message using the following algorithm
 
 $s = m^dmodn$ 
-$=292013489125751596553767941623740733858^{28104295547889346638305849868614445132738751801336887782507481519576510174383}mod(88060126050053286133358329588325261416508643838108904670297433897418944738301) $
+$=292013489125751596553767941623740733858^{28104295547889346638305849868614445132738751801336887782507481519576510174383}$ $mod(88060126050053286133358329588325261416508643838108904670297433897418944738301) $
 
 $= 86049882927644910814011702713016709134818318032818047653225539478708216829379$
 
@@ -227,7 +227,7 @@ Bob sends $(m,s) = (292013489125751596553767941623740733858,86049882927644910814
 
 Alice verifies using $(n,e) = (88060126050053286133358329588325261416508643838108904670297433897418944738301,47)$
 
-$m'= s^emod(n) =  86049882927644910814011702713016709134818318032818047653225539478708216829379^{47}mod(88060126050053286133358329588325261416508643838108904670297433897418944738301)$
+$m'= s^emod(n) =  86049882927644910814011702713016709134818318032818047653225539478708216829379^{47}$ $mod(88060126050053286133358329588325261416508643838108904670297433897418944738301)​$
 
 $m' = 292013489125751596553767941623740733858$ 
 
@@ -237,11 +237,24 @@ Because $m ==m'$ so Alice can verify that the sender is Bob
 
 ## Q2.4
 
+First method.
 
+- Between Alice and Bob can meet up and share a symmetric key `k` .
 
+- Alice encrypts her message `M` using `k`, get `C`
+- Alice sends `C` to Bob.
+- Bob decrypts `C` using `k` and get the message `M`
 
+> Even if Bob sends `C` to Charlie, without symmetric key `k`, Charlie won't be able to decrypt the message.
 
+Second method.
 
+- Instead of meeting up, Alice signs the message "Symmetric K: `K`" and then encrypts it using Bob's public key, get `E` and sends to Bob
+- Bob uses his private key and Alice's public key to decrypt and get `K`
+- Alice encrypts `M` "I love you" with `K`. Signs it with her private key and encrypts it again using Bob's public key, get `C` and sends to Bob.
+- Bob uses his private key, Alice's public key and `K` to get `M`
+
+> Likewise, if Bob sends `C` to Charlie, he won't be able to decrypt without `K`
 
 ## Q4.1
 

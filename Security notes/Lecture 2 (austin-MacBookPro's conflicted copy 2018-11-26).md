@@ -47,9 +47,8 @@
 
 > It's somewhat secure why:
 >
-> - Ciphertext gives **no** useful information about plaintext
+> 	- Ciphertext gives **no** useful information about plaintext
 > - All plaintexts are equally likely
-> - each key will gives a different plain text message
 >
 > But **not practical** because: 
 >
@@ -57,7 +56,7 @@
 
 **ISSUES**
 
-> **If you have the cipher text and the plain text, you have the key as well.**
+> If you have the cipher text and the plain text, you have the key as well.
 
 ## Stream Ciphers
 
@@ -66,7 +65,7 @@
 - Encrypts 1 bit of the plaintext at a time.
 - It uses an **infinite stream of pseudorandom** bits as a key
 - Its pseudorandom generator should be unpredictable and the key should never be used.
-- The **key is less than the original message**. However the security level is also less than One-Time Pad because the key isn't as long as the message. Although, the security level is still strong.
+- The **key is less than the original message**. However the security level is also less than One-Time Pad
 
 ### Usages and Examples:
 
@@ -191,7 +190,7 @@ Crypto Hash function $h(x)$ must provide
 - **Efficiency**: $h(x)$ easy to compute for any $x$
 - **One-way**: Can't reverse
 - **Weak collision resistance**: given $x$ and $h(x)$. It's impossible to find $y$ that $h(y) == h(x)$ // one specific case
-- **Strong collision resistance**: it's impossible to find **any** $x,y$ that $h(x) == h(y)$ // general case.
+- **Strong collision resistance**: it's impossible to find **any** $x,y$ that $h(x) == (hy)$ // general case.
 
 ![image-20180723134252455](image-20180723134252455.png)
 

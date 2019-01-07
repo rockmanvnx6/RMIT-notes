@@ -37,7 +37,7 @@ Set the secret-key is `123`
 openssl rsautl -in cipher.txt -out cipher-signed.txt -pubin -inkey pub-key.pem -encrypt
 ```
 
-- init ipfs system
+- init ipfs system // init already
 
 - ```bash
   ipfs init
@@ -75,7 +75,7 @@ openssl rsautl -in cipher.txt -out cipher-signed.txt -pubin -inkey pub-key.pem -
   ipfs get QmaeTGkcco6yJzJ2ssVDUG6Y9HZe21b45L6ajtdP3YatNR
   ```
 
-- He decrypt using his private key:
+- He decrypt using his private key: // replace hash
 
   ```bash
   openssl rsautl -in QmaeTGkcco6yJzJ2ssVDUG6Y9HZe21b45L6ajtdP3YatNR -out to-decipher.txt -inkey key.pem -decrypt

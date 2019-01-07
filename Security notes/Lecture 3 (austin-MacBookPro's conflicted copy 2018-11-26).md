@@ -76,8 +76,6 @@ mod_inverse(7,20) == 3;
   - `LCM(6,10) = 30`. 30 is the smallest number that divisible for 6 and 10.
   - `LCM(5,15) = 15`. 15 is divisible for 5 and 15.
 
-![image-20181022004845037](image-20181022004845037.png)
-
 ## RSA Example: An Overview
 
 ![image-20180730132827051](image-20180730132827051.png)
@@ -93,6 +91,7 @@ mod_inverse(7,20) == 3;
 
 - can choose 3 as well.
 
+  
 
 ## How to generate private key
 

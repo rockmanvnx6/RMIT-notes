@@ -103,3 +103,6 @@
     - provide the answer and ask the users to select one or more ( multiple choices )
 - Start with screener:
   - Start by asking if they used the site/app on that specific platform. 
+- Do not lead the user.
+- Do not waste time.
+- Dont make the user feel tested.

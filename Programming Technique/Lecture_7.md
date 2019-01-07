@@ -19,6 +19,17 @@ Pet pet = new pet();
 
 - Use this when you want the Class cannot be initialized, so like if you have a class name `Animal`. You don't want the user to create `new Animal`. You want to specify it to either `new Dog` or `new Cat`
 
+**HOWEVER**
+
+you can initialise the whole array:
+
+```java
+Pet house[] = new Pet();
+house[0] = new Dog();
+```
+
+
+
 ## Abstract method
 
 ```java
@@ -58,7 +69,7 @@ There are bunch of codes signature but without the body.
 
 Usually, the interface is ==public==. The class will have to implement all of the method which are in that interface.
 
-
+**You don't need to declare variable in interface and don't need to declare type <kbd>public</kbd>, <kbd>private</kbd>, <kbd>protected</kbd>**
 
 ```java
 public interface MotorVehicle {
